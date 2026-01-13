@@ -1,0 +1,336 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: #2b2b2b;
+  background:
+    radial-gradient(circle at 15% 15%, #ffd6e8 0%, transparent 40%),
+    radial-gradient(circle at 85% 25%, #e0c3fc 0%, transparent 45%),
+    radial-gradient(circle at 50% 85%, #c1eaff 0%, transparent 45%),
+    #fff6fb;
+  background-attachment: fixed;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ff4d8d;
+}
+
+nav a {
+  margin-left: 22px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #ff4d8d;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   HERO SECTION (FIXED)
+========================= */
+.hero {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 160px 60px 160px; /* bottom padding FIX */
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 52px;
+  line-height: 1.2;
+}
+
+.hero h1 span {
+  color: #ff4d8d;
+}
+
+.hero h3 {
+  margin: 16px 0;
+  font-weight: 500;
+  color: #555;
+}
+
+.hero p {
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #444;
+}
+
+/* HERO BUTTONS – interaction FIX */
+.hero-buttons {
+  margin-top: 28px;
+  display: flex;
+  gap: 18px;
+  position: relative;
+  z-index: 3;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.primary {
+  background: linear-gradient(135deg, #ff7eb3, #ff4d8d);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(255,77,141,0.4);
+}
+
+.primary:hover {
+  transform: translateY(-4px);
+}
+
+.outline {
+  border: 2px solid #ff4d8d;
+  color: #ff4d8d;
+  background: rgba(255,255,255,0.6);
+}
+
+/* =========================
+   HERO IMAGE (FIXED BORDER)
+========================= */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 280px;
+  height: 280px;
+
+  object-fit: cover;
+  object-position: center top; /* IMPORTANT */
+
+  border-radius: 50%;
+
+  background: #fff;
+  padding: 12px;
+
+  border: 6px solid rgba(255, 77, 141, 0.35);
+
+  box-shadow:
+    0 25px 60px rgba(255, 77, 141, 0.4),
+    0 0 0 16px rgba(255, 214, 232, 0.6);
+}
+
+/* =========================
+   SECTIONS (NO OVERLAP)
+========================= */
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: auto;
+  padding: 110px 60px;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.section p {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #555;
+}
+
+/* GLASS SECTIONS */
+.glass {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(16px);
+  border-radius: 30px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   SKILLS (KEEP GOOD ANIMATION)
+========================= */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.skill {
+  padding: 30px;
+  border-radius: 24px;
+  background: linear-gradient(135deg,#ffd6e8,#e0c3fc,#c1eaff);
+  text-align: center;
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.skill i {
+  font-size: 36px;
+  color: #ff4d8d;
+  margin-bottom: 10px;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* =========================
+   PROJECTS
+========================= */
+.project-card {
+  padding: 36px;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 55px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  width: 190px;
+  height: 170px;
+  border-radius: 26px;
+  background: linear-gradient(135deg,#ffe6f1,#ede2ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  padding: 40px;
+  text-align: center;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px);
+}
+.project-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.project-links .btn i {
+  margin-right: 6px;
+}
+/* =========================
+   CONTACT FORM (ADDITIONAL)
+========================= */
+.contact-form-wrapper {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.contact-form-wrapper h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 520px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 0 2px rgba(255, 77, 141, 0.4);
+}
+
+.contact-form button {
+  align-self: center;
+  margin-top: 10px;
+}
